@@ -11,12 +11,27 @@ class CollideRacketAction(Action):
         
     def execute(self, cast, script, callback):
         ball = cast.get_first_actor(BALL_GROUP)
-        racket = cast.get_first_actor(RACKET_GROUP)
-        
-        ball_body = ball.get_body()
-        racket_body = racket.get_body()
 
-        if self._physics_service.has_collided(ball_body, racket_body):
+        racket1 = cast.get_first_actor(RACKET_GROUP1)
+
+        racket2 = cast.get_first_actor(RACKET_GROUP2)
+
+        
+
+        ball_body = ball.get_body()
+        racket_body1 = racket1.get_body()
+        racket_body2 = racket2.get_body()
+
+        if self._physics_service.has_collided(ball_body, racket_body1):
             ball.bounce_y()
             sound = Sound(BOUNCE_SOUND)
             self._audio_service.play_sound(sound)    
+
+        if self._physics_service.has_collided(ball_body, racket_body2):
+            ball.bounce_y()
+            sound = Sound(BOUNCE_SOUND)
+            self._audio_service.play_sound(sound)
+        
+       
+
+
