@@ -43,12 +43,12 @@ class Racket(Actor):
 
     def swing_left(self, velocity_racket):
         """Steers the bat to the left."""
-        velocity = Point(-velocity_racket, 0)
+        velocity = Point(0,-velocity_racket)
         self._body.set_velocity(velocity)
         
     def swing_right(self, velocity_racket):
         """Steers the bat to the right."""
-        velocity = Point(velocity_racket, 0)
+        velocity = Point(0, velocity_racket)
         self._body.set_velocity(velocity)
     
     def stop_moving(self):

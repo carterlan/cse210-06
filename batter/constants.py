@@ -103,7 +103,8 @@ BALL_VELOCITY = 6
 # RACKET
 RACKET_GROUP1 = "rackets1"
 RACKET_GROUP2 = 'rackets2'
-RACKET_IMAGES = [f"batter/assets/images/{n:03}.png" for n in range(100, 103)]
+RACKET_IMAGES1 = [f"batter/assets/images/{n:03}.png" for n in range(100, 103)]
+RACKET_IMAGES2 = [f"batter/assets/images/{n:03}.png" for n in range(103, 106)]
 RACKET_WIDTH = 106
 RACKET_HEIGHT = 28
 RACKET_RATE = 6
