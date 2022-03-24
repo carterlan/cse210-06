@@ -5,7 +5,7 @@ from game.casting.color import Color
 # -------------------------------------------------------------------------------------------------- 
 
 # GAME
-GAME_NAME = "Batter"
+GAME_NAME = "Pong"
 FRAME_RATE = 60
 
 # SCREEN
@@ -90,7 +90,8 @@ LEVEL_GROUP = "level"
 LIVES_GROUP = "lives"
 SCORE_GROUP = "score"
 LEVEL_FORMAT = "LEVEL: {}"
-LIVES_FORMAT = "LIVES: {}"
+LIVES_FORMAT = "Player 1 LIVES: {}"
+LIVES_FORMAT2 = "Player 2 LIVES: {}"
 SCORE_FORMAT = "SCORE: {}"
 
 # BALL
@@ -112,7 +113,7 @@ RACKET_VELOCITY1 = 7
 RACKET_VELOCITY2 = 1
 
 # BRICK
-BRICK_GROUP = "bricks"
+"""BRICK_GROUP = "bricks"
 BRICK_IMAGES = {
     "b": [f"batter/assets/images/{i:03}.png" for i in range(10,19)],
     "g": [f"batter/assets/images/{i:03}.png" for i in range(20,29)],
@@ -123,7 +124,7 @@ BRICK_WIDTH = 80
 BRICK_HEIGHT = 28
 BRICK_DELAY = 0.5
 BRICK_RATE = 4
-BRICK_POINTS = 50
+BRICK_POINTS = 50"""
 
 # DIALOG
 DIALOG_GROUP = "dialogs"
