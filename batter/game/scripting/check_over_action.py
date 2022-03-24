@@ -1,4 +1,4 @@
-from constants import *
+"""from constants import *
 from game.scripting.action import Action
 
 
@@ -12,4 +12,4 @@ class CheckOverAction(Action):
         if len(bricks) == 0:
             stats = cast.get_first_actor(STATS_GROUP)
             stats.next_level()
-            callback.on_next(NEXT_LEVEL)
+            callback.on_next(NEXT_LEVEL)"""

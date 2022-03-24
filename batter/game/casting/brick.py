@@ -1,4 +1,4 @@
-from game.casting.actor import Actor
+'''from game.casting.actor import Actor
 
 
 class Brick(Actor):
@@ -39,4 +39,4 @@ class Brick(Actor):
         Returns:
             A number representing the brick's points.
         """
-        return self._points
+        return self._points'''

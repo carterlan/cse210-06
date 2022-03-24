@@ -3,7 +3,7 @@ from game.casting.sound import Sound
 from game.scripting.action import Action
 
 
-class CollideBrickAction(Action):
+"""class CollideBrickAction(Action):
 
     def __init__(self, physics_service, audio_service):
         self._physics_service = physics_service
@@ -24,4 +24,4 @@ class CollideBrickAction(Action):
                 self._audio_service.play_sound(sound)
                 points = brick.get_points()
                 stats.add_points(points)
-                cast.remove_actor(BRICK_GROUP, brick)
+                cast.remove_actor(BRICK_GROUP, brick)"""

@@ -2,7 +2,7 @@ from constants import *
 from game.scripting.action import Action
 
 
-class DrawBricksAction(Action):
+"""class DrawBricksAction(Action):
 
     def __init__(self, video_service):
         self._video_service = video_service
@@ -20,4 +20,4 @@ class DrawBricksAction(Action):
             animation = brick.get_animation()
             image = animation.next_image()
             position = body.get_position()
-            self._video_service.draw_image(image, position)
+            self._video_service.draw_image(image, position)"""
