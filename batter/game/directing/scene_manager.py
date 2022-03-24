@@ -230,7 +230,7 @@ class SceneManager:
     def _add_racket(self, cast):
         cast.clear_actors(RACKET_GROUP1)
         cast.clear_actors(RACKET_GROUP2)
-        x1 = SCREEN_WIDTH - RACKET_HEIGHT
+        x1 = SCREEN_WIDTH - RACKET_WIDTH
         y1 = CENTER_Y - RACKET_HEIGHT / 2
         position1 = Point(x1, y1)
         size1 = Point(RACKET_WIDTH, RACKET_HEIGHT)
@@ -239,7 +239,7 @@ class SceneManager:
         animation1 = Animation(RACKET_IMAGES1, RACKET_RATE)
         racket1 = Racket(body1, animation1)
 
-        x2 = 107 - RACKET_WIDTH
+        x2 = RACKET_HEIGHT
         y2 = CENTER_Y - RACKET_HEIGHT / 2
         position2 = Point (x2,y2)
         size2 = Point(RACKET_WIDTH, RACKET_HEIGHT)
