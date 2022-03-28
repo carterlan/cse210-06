@@ -43,9 +43,9 @@ RED = Color(255, 0, 0)
 
 
 # KEYS
-LEFT1 = "left"
-RIGHT1 = "right"
-LEFT2 = "a"
+LEFT1 = "up"
+RIGHT1 = "down"
+LEFT2 = "w"
 RIGHT2 = "s"
 SPACE = "space"
 ENTER = "enter"
@@ -56,7 +56,8 @@ NEW_GAME = 0
 TRY_AGAIN = 1
 NEXT_LEVEL = 2
 IN_PLAY = 3
-GAME_OVER = 4
+GAME_OVER1 = 4
+GAME_OVER2 = 4
 
 # LEVELS
 LEVEL_FILE = "batter/assets/data/level-{:03}.txt"
@@ -80,7 +81,8 @@ RELEASE = 6
 # -------------------------------------------------------------------------------------------------- 
 
 # STATS
-STATS_GROUP = "stats"
+STATS_GROUP_1 = "stats1"
+STATS_GROUP_2 = "stats2"
 DEFAULT_LIVES = 3
 MAXIMUM_LIVES = 5
 
@@ -130,4 +132,5 @@ BRICK_POINTS = 50"""
 DIALOG_GROUP = "dialogs"
 ENTER_TO_START = "PRESS ENTER TO START"
 PREP_TO_LAUNCH = "PREPARING TO LAUNCH"
-WAS_GOOD_GAME = "GAME OVER"
+WAS_GOOD_GAME_1 = "GAME OVER\nPLAYER 1 WINS"
+WAS_GOOD_GAME_2 = "GAME OVER\nPLAYER 2 WINS"

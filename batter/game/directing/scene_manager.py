@@ -76,8 +76,11 @@ class SceneManager:
             self._prepare_try_again(cast, script)
         elif scene == IN_PLAY:
             self._prepare_in_play(cast, script)
-        elif scene == GAME_OVER:    
-            self._prepare_game_over(cast, script)
+        elif scene == GAME_OVER1:    
+            self._prepare_game_over(cast, script, WAS_GOOD_GAME_1)
+        
+        elif scene == GAME_OVER2:
+            self._prepare_game_over(cast, script, WAS_GOOD_GAME_2)
     
     # ----------------------------------------------------------------------------------------------
     # scene methods
@@ -131,10 +134,11 @@ class SceneManager:
         self._add_update_script(script)
         self._add_output_script(script)
 
-    def _prepare_game_over(self, cast, script):
+    def _prepare_game_over(self, cast, script, text):
         self._add_ball(cast)
         self._add_racket(cast)
-        self._add_dialog(cast, WAS_GOOD_GAME)
+        
+        self._add_dialog(cast, text)
 
         script.clear_actions(INPUT)
         script.add_action(INPUT, TimedChangeSceneAction(NEW_GAME, 5))
@@ -151,8 +155,9 @@ class SceneManager:
 
     def _add_ball(self, cast):
         cast.clear_actors(BALL_GROUP)
-        x = SCREEN_WIDTH - RACKET_HEIGHT - BALL_HEIGHT
-        y = CENTER_Y - BALL_HEIGHT / 2  + 40
+        x = CENTER_X
+        
+        y = CENTER_Y 
         position = Point(x, y)
         size = Point(BALL_WIDTH, BALL_HEIGHT)
         velocity = Point(0, 0)
@@ -223,15 +228,19 @@ class SceneManager:
         cast.add_actor(SCORE_GROUP, label)
 
     def _add_stats(self, cast):
-        cast.clear_actors(STATS_GROUP)
-        stats = Stats()
-        cast.add_actor(STATS_GROUP, stats)
+        cast.clear_actors(STATS_GROUP_1)
+        cast.clear_actors(STATS_GROUP_2)
+        stats_1 = Stats()
+        cast.add_actor(STATS_GROUP_1, stats_1)
+        stats_2 = Stats()
+        cast.add_actor(STATS_GROUP_2, stats_2)
+
 
     def _add_racket(self, cast):
         cast.clear_actors(RACKET_GROUP1)
         cast.clear_actors(RACKET_GROUP2)
-        x1 = SCREEN_WIDTH - RACKET_WIDTH
-        y1 = CENTER_Y - RACKET_HEIGHT / 2
+        x1 = SCREEN_WIDTH  - RACKET_HEIGHT
+        y1 = CENTER_Y - RACKET_HEIGHT  / 2
         position1 = Point(x1, y1)
         size1 = Point(RACKET_WIDTH, RACKET_HEIGHT)
         velocity1 = Point(0, 0)
@@ -239,7 +248,7 @@ class SceneManager:
         animation1 = Animation(RACKET_IMAGES1, RACKET_RATE)
         racket1 = Racket(body1, animation1)
 
-        x2 = RACKET_HEIGHT
+        x2 = 0
         y2 = CENTER_Y - RACKET_HEIGHT / 2
         position2 = Point (x2,y2)
         size2 = Point(RACKET_WIDTH, RACKET_HEIGHT)

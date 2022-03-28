@@ -8,10 +8,14 @@ class DrawHudAction(Action):
         self._video_service = video_service
         
     def execute(self, cast, script, callback):
-        stats = cast.get_first_actor(STATS_GROUP)
-        self._draw_label(cast, LEVEL_GROUP, LIVES_FORMAT2, stats.get_lives())
-        self._draw_label(cast, LIVES_GROUP, LIVES_FORMAT, stats.get_lives())
-        self._draw_label(cast, SCORE_GROUP, SCORE_FORMAT, stats.get_score())
+        stats_1 = cast.get_first_actor(STATS_GROUP_1)
+        stats_2 = cast.get_first_actor(STATS_GROUP_2)
+
+        self._draw_label(cast, LEVEL_GROUP, LIVES_FORMAT2, stats_2.get_lives())
+        self._draw_label(cast, LIVES_GROUP, LIVES_FORMAT, stats_1.get_lives())
+
+        self._draw_label(cast, SCORE_GROUP, SCORE_FORMAT, stats_1.get_score())
+        self._draw_label(cast, SCORE_GROUP, SCORE_FORMAT, stats_2.get_score())
 
   
     def _draw_label(self, cast, group, format_str, data):
