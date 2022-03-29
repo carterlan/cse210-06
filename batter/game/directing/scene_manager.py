@@ -78,7 +78,7 @@ class SceneManager:
             self._prepare_in_play(cast, script)
         elif scene == GAME_OVER1:    
             self._prepare_game_over(cast, script, WAS_GOOD_GAME_1)
-        
+
         elif scene == GAME_OVER2:
             self._prepare_game_over(cast, script, WAS_GOOD_GAME_2)
     
