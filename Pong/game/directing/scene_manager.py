@@ -77,10 +77,9 @@ class SceneManager:
         elif scene == IN_PLAY:
             self._prepare_in_play(cast, script)
         elif scene == GAME_OVER1:    
-            self._prepare_game_over(cast, script, WAS_GOOD_GAME_1)
-
-        elif scene == GAME_OVER2:
             self._prepare_game_over(cast, script, WAS_GOOD_GAME_2)
+        elif scene == GAME_OVER2:
+            self._prepare_game_over(cast, script, WAS_GOOD_GAME_1)
     
     # ----------------------------------------------------------------------------------------------
     # scene methods
@@ -90,7 +89,7 @@ class SceneManager:
         self._add_stats(cast)
         self._add_level(cast)
         self._add_lives(cast)
-        self._add_score(cast)
+        #self._add_score(cast)
         self._add_ball(cast)
         # self._add_bricks(cast)
         self._add_racket(cast)
@@ -220,12 +219,12 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(LIVES_GROUP, label)
 
-    def _add_score(self, cast):
+    """def _add_score(self, cast):
         cast.clear_actors(SCORE_GROUP)
         text = Text(SCORE_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
         position = Point(CENTER_X, HUD_MARGIN)
         label = Label(text, position)
-        cast.add_actor(SCORE_GROUP, label)
+        cast.add_actor(SCORE_GROUP, label)"""
 
     def _add_stats(self, cast):
         cast.clear_actors(STATS_GROUP_1)
@@ -239,7 +238,7 @@ class SceneManager:
     def _add_racket(self, cast):
         cast.clear_actors(RACKET_GROUP1)
         cast.clear_actors(RACKET_GROUP2)
-        x1 = SCREEN_WIDTH  - RACKET_HEIGHT
+        x1 = SCREEN_WIDTH  - 28
         y1 = CENTER_Y - RACKET_HEIGHT  / 2
         position1 = Point(x1, y1)
         size1 = Point(RACKET_WIDTH, RACKET_HEIGHT)

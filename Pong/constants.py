@@ -56,7 +56,7 @@ NEW_GAME = 0
 TRY_AGAIN = 1
 NEXT_LEVEL = 2
 IN_PLAY = 3
-GAME_OVER1 = 4
+GAME_OVER1 = 5
 GAME_OVER2 = 4
 
 # LEVELS
@@ -108,8 +108,8 @@ RACKET_GROUP1 = "rackets1"
 RACKET_GROUP2 = 'rackets2'
 RACKET_IMAGES1 = [f"batter/assets/images/{n:03}.png" for n in range(100, 103)]
 RACKET_IMAGES2 = [f"batter/assets/images/{n:03}.png" for n in range(103, 106)]
-RACKET_WIDTH = 106
-RACKET_HEIGHT = 28
+RACKET_WIDTH = 28
+RACKET_HEIGHT = 106
 RACKET_RATE = 6
 RACKET_VELOCITY1 = 7
 RACKET_VELOCITY2 = 7
