@@ -11,7 +11,7 @@ class DrawHudAction(Action):
         stats_1 = cast.get_first_actor(STATS_GROUP_1)
         stats_2 = cast.get_first_actor(STATS_GROUP_2)
 
-        self._draw_label(cast, LEVEL_GROUP, LIVES_FORMAT2, stats_2.get_lives())
+        self._draw_label(cast, LIVES_GROUP_2, LIVES_FORMAT2, stats_2.get_lives())
         self._draw_label(cast, LIVES_GROUP, LIVES_FORMAT, stats_1.get_lives())
 
   

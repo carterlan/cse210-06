@@ -8,7 +8,6 @@ class Stats(Actor):
     def __init__(self, debug = False):
         """Constructs a new Stats."""
         super().__init__(debug)
-        self._level = 1
         self._lives = DEFAULT_LIVES
         self._score = 0
 
@@ -25,13 +24,6 @@ class Stats(Actor):
         """
         self._score += points
 
-    def get_level(self):
-        """Gets the level.
-
-        Returns:
-            A number representing the level.
-        """
-        return self._level
 
     def get_lives(self):
         """Gets the lives.
@@ -53,13 +45,8 @@ class Stats(Actor):
         """Removes one life."""
         if self._lives > 0:
             self._lives -= 1
-    
-    def next_level(self):
-        """Adds one level."""
-        self._level += 1
 
     def reset(self):
         """Resets the stats back to their default values."""
-        self._level = 1
         self._lives = DEFAULT_LIVES
         self._score = 0

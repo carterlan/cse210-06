@@ -63,16 +63,16 @@ class SceneManager:
     def prepare_scene(self, scene, cast, script):
         if scene == NEW_GAME:
             self._prepare_new_game(cast, script)
-        elif scene == NEXT_LEVEL:
-            self._prepare_next_level(cast, script)
+        elif scene == NEXT_GAME:
+            self._prepare_next_game(cast, script)
         elif scene == TRY_AGAIN:
             self._prepare_try_again(cast, script)
         elif scene == IN_PLAY:
             self._prepare_in_play(cast, script)
         elif scene == GAME_OVER1:    
-            self._prepare_game_over(cast, script, WAS_GOOD_GAME_2)
-        elif scene == GAME_OVER2:
             self._prepare_game_over(cast, script, WAS_GOOD_GAME_1)
+        elif scene == GAME_OVER2:
+            self._prepare_game_over(cast, script, WAS_GOOD_GAME_2)
     
     # ----------------------------------------------------------------------------------------------
     # scene methods
@@ -80,7 +80,7 @@ class SceneManager:
     
     def _prepare_new_game(self, cast, script):
         self._add_stats(cast)
-        self._add_level(cast)
+        self._add_lives_2(cast)
         self._add_lives(cast)
         self._add_ball(cast)
         self._add_racket(cast)
@@ -89,12 +89,12 @@ class SceneManager:
         self._add_initialize_script(script)
         self._add_load_script(script)
         script.clear_actions(INPUT)
-        script.add_action(INPUT, ChangeSceneAction(self.KEYBOARD_SERVICE, NEXT_LEVEL))
+        script.add_action(INPUT, ChangeSceneAction(self.KEYBOARD_SERVICE, NEXT_GAME))
         self._add_output_script(script)
         self._add_unload_script(script)
         self._add_release_script(script)
         
-    def _prepare_next_level(self, cast, script):
+    def _prepare_next_game(self, cast, script):
         self._add_ball(cast)
         self._add_racket(cast)
         self._add_dialog(cast, PREP_TO_LAUNCH)
@@ -162,12 +162,12 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(DIALOG_GROUP, label)
 
-    def _add_level(self, cast):
-        cast.clear_actors(LEVEL_GROUP)
-        text = Text(LEVEL_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_LEFT)
+    def _add_lives_2(self, cast):
+        cast.clear_actors(LIVES_GROUP_2)
+        text = Text(LIVES_2_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_LEFT)
         position = Point(HUD_MARGIN, HUD_MARGIN)
         label = Label(text, position)
-        cast.add_actor(LEVEL_GROUP, label)
+        cast.add_actor(LIVES_GROUP_2, label)
 
     def _add_lives(self, cast):
         cast.clear_actors(LIVES_GROUP)
