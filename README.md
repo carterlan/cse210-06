@@ -39,4 +39,5 @@ root                    (project root folder)
 ---
 * Landon Carter (carteronelah@gmail.com)
 * Ederson Alejandro Villamizar-Escobar (vil21004@byui.edu)
+*Elizabeth Tellez (tellezelizbethmf@gmail.com)
 * Jordan Gilmore
